@@ -366,13 +366,13 @@ function modify_port() {
 }
 
 function configure_xray() {
-  cd /usr/local/etc/xray && rm -f config.json && wget -O config.json https://raw.githubusercontent.com/moyada/Xray_onekey/${github_branch}/config/xray_xtls-rprx-direct.json
+  cd /usr/local/etc/xray && rm -f config.json && wget -O config.json https://raw.githubusercontent.com/moyada/Xray_onekey/${github_branch}/config/xray_xtls-rprx-vision.json
   modify_UUID
   modify_port
 }
 
 function configure_xray_ws() {
-  cd /usr/local/etc/xray && rm -f config.json && wget -O config.json https://raw.githubusercontent.com/moyada/Xray_onekey/${github_branch}/config/xray_tls_ws_mix-rprx-direct.json
+  cd /usr/local/etc/xray && rm -f config.json && wget -O config.json https://raw.githubusercontent.com/moyada/Xray_onekey/${github_branch}/config/xray_tls_ws_mix-rprx-vision.json
   modify_UUID
   modify_UUID_ws
   modify_port
@@ -665,12 +665,12 @@ function install_xray() {
   dependency_install
   basic_optimization
   domain_check
-  port_exist_check 80
+#   port_exist_check 80
   xray_install
   configure_xray
-  nginx_install
-  configure_nginx
-  configure_web
+#   nginx_install
+#   configure_nginx
+#   configure_web
   generate_certificate
   ssl_judge_and_install
   restart_all
