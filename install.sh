@@ -665,12 +665,12 @@ function install_xray() {
   dependency_install
   basic_optimization
   domain_check
-#   port_exist_check 80
+  port_exist_check 80
   xray_install
   configure_xray
-#   nginx_install
-#   configure_nginx
-#   configure_web
+  nginx_install
+  configure_nginx
+  configure_web
   generate_certificate
   ssl_judge_and_install
   restart_all
